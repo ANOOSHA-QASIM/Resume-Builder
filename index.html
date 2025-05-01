@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dynamic Resume Builder</h1>
+    
+    <div class="form-container">
+        <form id="resumeForm">
+            <h3>Personal Information</h3>
+            <label for="profilePicture">Profile Picture:</label>
+            <input type="file" id="profilePicture" accept="image/*"><br><br>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name"><br><br>
+
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle"><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email"><br><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address"><br><br>
+
+            <h3>Websites & Social Links</h3>
+            <div id="socialLinksContainer"></div>
+            <button type="button" id="addSocialLink">+ Add Another</button><br><br>
+
+            <h3>Education</h3>
+            <div id="educationContainer"></div>
+            <button type="button" id="addEducation">+ Add Another</button><br><br>
+
+            <h3>Projects</h3>
+            <div id="projectsContainer"></div>
+            <button type="button" id="addProject">+ Add Another</button><br><br>
+
+            <h3>Certifications</h3>
+            <div id="certificationsContainer"></div>
+            <button type="button" id="addCertification">+ Add Another</button><br><br>
+
+            <h3>Professional Skills</h3>
+            <div id="skillsContainer">
+                <button type="button" id="addSkill">+ Add Skill</button>
+            </div>
+            <br><br>
+
+            <h3>Professional Summary</h3>
+            <textarea id="summary" rows="4"></textarea><br><br>
+
+            <h3>Experience</h3>
+            <textarea id="experience" rows="4"></textarea><br><br>
+
+            <h3>References</h3>
+            <textarea id="references" rows="3"></textarea><br><br>
+
+            <button type="button" id="generateResume">Generate Resume</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <div class="profileText">
+                <div class="profileImage">
+                    <img id="profilePictureDisplay" class="profile-picture" alt="Profile Picture">
+                </div>
+                <h2 id="nameDisplay"></h2>
+                <h6 id="jobTitleDisplay"></h6>
+            </div>
+    
+            <section class="info">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li><span id="phoneDisplay"></span></li>
+                    <li><span id="emailDisplay"></span></li>
+                    <li><span id="addressDisplay"></span></li>
+                </ul>
+            </section>
+    
+            <section class="info">
+                <h3 class="title">Websites & Social Links</h3>
+                <ul>
+                    <li><span id="socialLinksDisplay"></span></li>
+                </ul>
+            </section>
+    
+            <section class="info-education">
+                <h3 class="title">Education</h3>
+                <ul id="educationDisplay">
+                    <li>
+                        <h5>Degree Name</h5>
+                        <h4>University Name, Year</h4>
+                    </li>
+                </ul>
+            </section>
+    
+            <section class="info">
+                <h3 class="title">Certifications</h3>
+                <div id="certificationsDisplay"></div>
+            </section>
+        </div>
+    
+        <div class="right">
+         
+    
+            <section class="about">
+                <h2>Professional Summary</h2>
+                <p id="summaryDisplay"></p>
+            </section>
+    
+            <section class="about">
+                <h2>Experience</h2>
+                <p id="experienceDisplay"></p>
+            </section>
+    
+            <section class="about">
+                <h2>Projects</h2>
+                <ul class="projects" id="projectsDisplay"><li></li></ul>
+            </section>
+    
+            <section class="about skills">
+                <h2>Professional Skills</h2>
+                <ul  class="skill-list" id="skillsDisplay"><li></li></ul>
+            </section>
+    
+            <section class="about">
+                <h2>References</h2>
+                <p id="referencesDisplay"></p>
+            </section>
+        </div>
+    </div>
+    
+    <button id="btn" type="button" onclick="downloadResumeAsPDF()">Download as PDF</button>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
